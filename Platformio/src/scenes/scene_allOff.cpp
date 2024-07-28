@@ -4,7 +4,8 @@
 #include "applicationInternal/scenes/sceneRegistry.h"
 #include "applicationInternal/hardware/hardwarePresenter.h"
 // devices
-#include "devices/TV/device_samsungTV/device_samsungTV.h"
+//#include "devices/TV/device_samsungTV/device_samsungTV.h"
+#include "devices/TV/device_lgTV/device_lgTV.h"
 #include "devices/AVreceiver/device_yamahaAmp/device_yamahaAmp.h"
 #include "applicationInternal/commandHandler.h"
 
@@ -50,17 +51,17 @@ void scene_setKeys_allOff() {
 }
 
 void scene_start_sequence_allOff(void) {
-  executeCommand(SAMSUNG_POWER_OFF);
+  executeCommand(LGTV_POWER_OFF);
   delay(500);
   executeCommand(YAMAHA_POWER_OFF);
   delay(500);
   // repeat IR to be sure
-  executeCommand(SAMSUNG_POWER_OFF);
+  executeCommand(LGTV_POWER_OFF);
   delay(500);
   executeCommand(YAMAHA_POWER_OFF);
   delay(500);
   // repeat IR to be sure
-  executeCommand(SAMSUNG_POWER_OFF);
+  executeCommand(LGTV_POWER_OFF);
   delay(500);
   executeCommand(YAMAHA_POWER_OFF);
   delay(500);

@@ -4,7 +4,8 @@
 #include "applicationInternal/scenes/sceneRegistry.h"
 #include "applicationInternal/hardware/hardwarePresenter.h"
 // devices
-#include "devices/TV/device_samsungTV/device_samsungTV.h"
+//#include "devices/TV/device_samsungTV/device_samsungTV.h"
+#include "devices/TV/device_lgTV/device_lgTV.h"
 #include "devices/AVreceiver/device_yamahaAmp/device_yamahaAmp.h"
 #include "applicationInternal/commandHandler.h"
 // guis
@@ -33,14 +34,14 @@ void scene_setKeys_TV() {
   
   key_commands_short_TV = {
   
-    {KEY_STOP,  SAMSUNG_PAUSE    },    {KEY_REWI,  SAMSUNG_REWIND   },    {KEY_PLAY,  SAMSUNG_PLAY     },    {KEY_FORW,  SAMSUNG_FASTFORWARD},
-    {KEY_CONF,  SAMSUNG_GUIDE    },                                                                          {KEY_INFO,  SAMSUNG_MENU     },
-                                                         {KEY_UP,    SAMSUNG_UP       },
-                      {KEY_LEFT,  SAMSUNG_LEFT    },     {KEY_OK,    SAMSUNG_SELECT   },    {KEY_RIGHT, SAMSUNG_RIGHT    },
-                                                         {KEY_DOWN,  SAMSUNG_DOWN     },
-                                                                                                             {KEY_SRC,   SAMSUNG_EXIT     },
-                                                                                                             {KEY_CHUP,  SAMSUNG_CHANNEL_UP},
-                                                                                                             {KEY_CHDOW, SAMSUNG_CHANNEL_DOWN},
+    {KEY_STOP,  LGTV_PAUSE    },    {KEY_REWI,  LGTV_REWIND   },    {KEY_PLAY,  LGTV_PLAY     },    {KEY_FORW,  LGTV_FASTFORWARD},
+    {KEY_CONF,  LGTV_GUIDE    },                                                                          {KEY_INFO,  LGTV_MENU     },
+                                                         {KEY_UP,    LGTV_UP       },
+                      {KEY_LEFT,  LGTV_LEFT    },     {KEY_OK,    LGTV_OK   },    {KEY_RIGHT, LGTV_RIGHT    },
+                                                         {KEY_DOWN,  LGTV_DOWN     },
+                                                                                                             {KEY_SRC,   LGTV_EXIT     },
+                                                                                                             {KEY_CHUP,  LGTV_CHANNEL_UP},
+                                                                                                             {KEY_CHDOW, LGTV_CHANNEL_DOWN},
   
   };
   
@@ -52,13 +53,13 @@ void scene_setKeys_TV() {
 }
 
 void scene_start_sequence_TV(void) {
-  executeCommand(SAMSUNG_POWER_ON);
+  executeCommand(LGTV_POWER_ON);
   delay(500);
   executeCommand(YAMAHA_POWER_ON);
   delay(1500);
   executeCommand(YAMAHA_INPUT_DVD);
   delay(3000);
-  executeCommand(SAMSUNG_INPUT_TV);
+  executeCommand(LGTV_INPUT_TV);
 
 }
 

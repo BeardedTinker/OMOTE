@@ -12,8 +12,8 @@
 #include "devices/keyboard/device_keyboard_mqtt/device_keyboard_mqtt.h"
 #include "devices/keyboard/device_keyboard_ble/device_keyboard_ble.h"
 //   TV
-#include "devices/TV/device_samsungTV/device_samsungTV.h"
-//#include "devices/TV/device_lgTV/device_lgTV.h"
+//#include "devices/TV/device_samsungTV/device_samsungTV.h"
+#include "devices/TV/device_lgTV/device_lgTV.h"
 //   AV receiver
 #include "devices/AVreceiver/device_yamahaAmp/device_yamahaAmp.h"
 //#include "devices/AVreceiver/device_denonAvr/device_denonAvr.h"
@@ -82,8 +82,8 @@ int main(int argc, char *argv[]) {
   // register commands for the devices
   register_specialCommands();
   //   TV
-  register_device_samsungTV();
-//  register_device_lgTV();
+//  register_device_samsungTV();
+  register_device_lgTV();
   //   AV receiver
   register_device_yamahaAmp();
   //register_device_denonAvr();
